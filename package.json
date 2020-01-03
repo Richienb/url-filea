@@ -1,6 +1,6 @@
 {
     "name": "url-filea",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "description": "Create and read Windows Internet Shortcut files.",
     "repository": "https://github.com/Richienb/url-filea.git",
     "author": "Richie Bendall <richiebendall@gmail.com>",
