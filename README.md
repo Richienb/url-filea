@@ -1,41 +1,40 @@
-# The module [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/the-module/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/the-module)
+# URL Filea [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/url-filea/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/url-filea)
 
-My awesome module.
+Create and read Windows Internet Shortcut files.
 
-[![NPM Badge](https://nodei.co/npm/the-module.png)](https://npmjs.com/package/the-module)
+[![NPM Badge](https://nodei.co/npm/url-filea.png)](https://npmjs.com/package/url-filea)
 
 ## Install
 
 ```sh
-npm install the-module
+npm install url-filea
 ```
 
 ## Usage
 
 ```js
-const theModule = require("the-module");
+const urlFile = require("url-filea");
 
-theModule("unicorns");
-//=> 'unicorns & rainbows'
+(async () => {
+    await urlFile("google.url", { url: "https://google.com" })
+
+    await urlFile("google.url")
+    //=> { url: "https://google.com" }
+})()
 ```
 
 ## API
 
-### theModule(input, options?)
+### urlFilea(filename, options?)
 
-#### input
+#### filename
 
 Type: `string`
 
-Lorem ipsum.
+The name of the file to read or write to.
 
 #### options
 
 Type: `object`
 
-##### postfix
-
-Type: `string`\
-Default: `rainbows`
-
-Lorem ipsum.
+The data to write. If not specified, the data is read instead.

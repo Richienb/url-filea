@@ -1,14 +1,30 @@
+declare interface URLData extends object {
+    url: string
+    workingDirectory?: string
+    showCommand?: number
+    iconIndex?: number
+    iconFile?: number
+    modified?: number
+    hotKey?: number
+}
+
 /**
- * My awesome module.
- * @param input Lorem ipsum.
- * @param postfix Lorem ipsum.
+ * Create and read Windows Internet Shortcut files.
+ * @param filename The name of the shortcut file.
+ * @param options The options to use in the file.
  * @example
  * ```
- * const theModule = require("the-module");
- * theModule("unicorns");
- * //=> 'unicorns & rainbows'
+ * const urlFile = require("url-filea");
+ *
+ * (async () => {
+ *     await urlFile("google.url", { url: "https://google.com" })
+ *
+ *     await urlFile("google.url")
+ *     //=> { url: "https://google.com" }
+ * })()
  * ```
 */
-declare function theModule(input: string, { postfix }: { postfix?: string }): string;
+declare function urlFilea(filename: string): Promise<URLData>;
+declare function urlFilea(filename: string, options: URLData): Promise<void>;
 
-export = theModule;
+export = urlFilea;
